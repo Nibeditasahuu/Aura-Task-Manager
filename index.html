@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aura Task Manager</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="components.css">
+
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <div class="logo">
+
+                Aura Task Manager
+
+            </div>
+
+            <button id="addTaskBtn" class="btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Task
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard">
+
+        <div class="container">
+
+            <h1 class="page-title">
+
+                Project Dashboard
+
+            </h1>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    <h2 id="totalTasks">
+
+                        0
+
+                    </h2>
+
+                    <p>Total Tasks</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-hourglass-half"></i>
+
+                    <h2 id="pendingTasks">
+
+                        0
+
+                    </h2>
+
+                    <p>Pending</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-spinner"></i>
+
+                    <h2 id="progressTasks">
+
+                        0
+
+                    </h2>
+
+                    <p>In Progress</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h2 id="completedTasks">
+
+                        0
+
+                    </h2>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+        <div class="container search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search task...">
+
+            <select id="statusFilter">
+
+                <option value="all">
+
+                    All Status
+
+                </option>
+
+                <option value="Pending">
+
+                    Pending
+
+                </option>
+
+                <option value="In Progress">
+
+                    In Progress
+
+                </option>
+
+                <option value="Completed">
+
+                    Completed
+
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TASKS ================= -->
+
+    <section class="tasks">
+
+        <div class="container">
+
+            <div id="taskContainer" class="task-grid">
+
+                <!-- JavaScript -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ADD / EDIT MODAL ================= -->
+
+    <div class="modal" id="taskModal">
+
+        <div class="modal-content">
+
+            <span class="close" id="closeModal">
+
+                &times;
+
+            </span>
+
+            <h2 id="modalTitle">
+
+                Add Task
+
+            </h2>
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Task Title"
+                    required>
+
+                <textarea
+                    id="taskDescription"
+                    placeholder="Task Description"
+                    required></textarea>
+
+                <select id="taskPriority">
+
+                    <option value="High">
+
+                        High
+
+                    </option>
+
+                    <option value="Medium">
+
+                        Medium
+
+                    </option>
+
+                    <option value="Low">
+
+                        Low
+
+                    </option>
+
+                </select>
+
+                <select id="taskStatus">
+
+                    <option value="Pending">
+
+                        Pending
+
+                    </option>
+
+                    <option value="In Progress">
+
+                        In Progress
+
+                    </option>
+
+                    <option value="Completed">
+
+                        Completed
+
+                    </option>
+
+                </select>
+
+                <input
+                    type="date"
+                    id="taskDate"
+                    required>
+
+                <button
+                    type="submit"
+                    class="btn">
+
+                    Save Task
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ================= DELETE MODAL ================= -->
+
+    <div class="modal" id="deleteModal">
+
+        <div class="modal-content delete-box">
+
+            <h2>
+
+                Delete Task?
+
+            </h2>
+
+            <p>
+
+                This action cannot be undone.
+
+            </p>
+
+            <div class="delete-buttons">
+
+                <button id="confirmDelete">
+
+                    Delete
+
+                </button>
+
+                <button id="cancelDelete">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SUCCESS POPUP ================= -->
+
+    <div class="success-popup" id="successPopup">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h2>
+
+            Task Saved Successfully
+
+        </h2>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer">
+
+            <p>
+
+                © 2026 Aura Project Management Tool
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="data.js"></script>
+
+    <script src="storage.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

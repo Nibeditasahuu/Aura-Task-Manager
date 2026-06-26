@@ -1,0 +1,319 @@
+/* ===========================
+   TASK CARD
+=========================== */
+
+.task-card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.task-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.task-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.task-title{
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.task-description{
+
+    color:#6b7280;
+
+    line-height:1.6;
+
+    margin-top:10px;
+
+}
+
+/* ===========================
+   BADGES
+=========================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* Priority */
+
+.priority-high{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.priority-medium{
+
+    background:#fef3c7;
+
+    color:#d97706;
+
+}
+
+.priority-low{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+/* Status */
+
+.status-pending{
+
+    background:#f3f4f6;
+
+    color:#374151;
+
+}
+
+.status-progress{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+.status-completed{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+/* ===========================
+   TASK INFO
+=========================== */
+
+.task-info{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.task-date{
+
+    font-size:14px;
+
+    color:#6b7280;
+
+}
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+
+.task-actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:10px;
+
+}
+
+.action-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.edit-btn{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+.edit-btn:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+.delete-btn{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.delete-btn:hover{
+
+    background:#dc2626;
+
+    color:#ffffff;
+
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.empty-state{
+
+    grid-column:1/-1;
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:60px 30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.empty-state i{
+
+    font-size:70px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+.empty-state h2{
+
+    margin-bottom:12px;
+
+    color:#111827;
+
+}
+
+.empty-state p{
+
+    color:#6b7280;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#94a3b8;
+
+}
+
+/* ===========================
+   INPUT FOCUS
+=========================== */
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+/* ===========================
+   BUTTON ACTIVE
+=========================== */
+
+button:active{
+
+    transform:scale(.98);
+
+}
